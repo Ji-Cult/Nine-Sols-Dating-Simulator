@@ -4,7 +4,10 @@ const UIS_PATH: String = "res://scenes/ui"
 
 @onready var gui: CanvasLayer = $gui
 
-var uis: Dictionary = {}
+var uis: Dictionary = {
+	"fader": preload("res://scenes/ui/fader.tscn"),
+	"pause_menu": preload("res://scenes/ui/pause_menu.tscn")
+}
 
 var active_uis: Array:
 	get:
@@ -27,12 +30,6 @@ var current_ui: BaseUI:
 		if len(active_uis) <= 0:
 			return null
 		return active_uis[-1]
-
-func _ready() -> void:
-	for file_name in DirAccess.get_files_at(UIS_PATH):
-		var path: String = "%s/%s" % [UIS_PATH, file_name]
-		var scene: PackedScene = load(path)
-		uis[file_name.get_basename()] = scene
 
 func open_ui(ui_name: String, re_instance: bool = false) -> BaseUI:
 	var ui: BaseUI = null

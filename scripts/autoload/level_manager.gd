@@ -2,13 +2,10 @@ extends Node
 
 const LEVELS_PATH: String = "res://scenes/levels"
 
-var levels: Dictionary = {}
-
-func _ready() -> void:
-	for file_name in DirAccess.get_files_at(LEVELS_PATH):
-		var path: String = "%s/%s" % [LEVELS_PATH, file_name]
-		var scene: PackedScene = load(path)
-		levels[file_name.get_basename()] = scene
+var levels: Dictionary = {
+	"game": preload("res://scenes/levels/game.tscn"),
+	"main_menu": preload("res://scenes/levels/main_menu.tscn"),
+}
 
 func change_level(level_name: String) -> void:
 	var fader: Fader = UIManager.open_ui("fader")

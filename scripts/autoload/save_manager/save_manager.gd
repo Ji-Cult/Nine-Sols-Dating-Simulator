@@ -11,7 +11,7 @@ const SETTINGS_PATH: String = "user://settings.tres"
 @export var default_save: SaveData
 
 ## The current settings instance
-var settings := Settings.new()
+var settings: Settings
 
 ## The currently loaded save game data
 var save_data: SaveData

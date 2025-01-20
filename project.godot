@@ -26,12 +26,12 @@ buses/default_bus_layout="res://resources/bus_layouts/default_bus_layout.tres"
 
 [autoload]
 
+SaveManager="*res://scenes/autoload/save_manager.tscn"
 AudioManager="*res://scenes/audio/audio_manager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GameManager="*res://scripts/autoload/game_manager.gd"
-LevelManager="*res://scenes/autoload/level_manager.tscn"
-SaveManager="*res://scenes/autoload/save_manager.tscn"
 UIManager="*res://scenes/ui_manager.tscn"
+LevelManager="*res://scenes/autoload/level_manager.tscn"
 
 [dialogic]
 
